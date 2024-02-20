@@ -7,7 +7,6 @@ library(dplyr)
 if (!requireNamespace("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
 BiocManager::install("msa") 
-`force = TRUE`
 library(msa)
 
 #set-up a working directory which will keep all my files in the same place and easy located on my computer
@@ -38,5 +37,21 @@ write.phyDat(SeqAln_phyDat, "Seq/Homo_Sapien6_alignment.fasta", format = "fasta"
 
 #Creates a new Fasta file with the translated Amino acid only of the 6th sequence 
 write.fasta(sequences = seq_AA, names = attr(seq_AA,"Homo_sapiens_6"), file.out = "seq_AA_6.fasta")
+
+
+
+
+#3. The gene is most likely HBB hemoglobin subunit beta for Homo sapiens. Found using BLAST. 
+#LC121775.1 is the accession number. It is a protein coding gene. 
+
+# Homo_Sapien_6 sequence is the most different individual which has 641 bp compared to 642 bp of all the other sequences. 
+# It codes for Homo Sapiens mutant hemoglobin beta chain (HBB)
+#AY356351.1 is the accession number 
+
+#5. The protein that best matches Homo_Sapien_6 is hemoglobin subunit beta (Homo sapiens)
+# KAI2558340.1 is the accession number 
+
+#6. possible diseases of the protein structure include sickle cell and beta thalassemia. 
+#Homo_Sapien_6 sequence does not have the diseases 
 
 
